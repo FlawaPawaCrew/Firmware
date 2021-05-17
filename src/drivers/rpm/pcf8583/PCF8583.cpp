@@ -127,7 +127,7 @@ void PCF8583::RunImpl()
 		_count = 0;
 	}
 
-	float indicated_rpm = (float)diffCount / _param_pcf8583_magnet.get() / ((float)diffTime / 1000000) * 60.f;
+	float indicated_rpm = (float)diffCount / (float)_param_pcf8583_magnet.get() / ((float)diffTime / 1000000) * 60.f;
 	float estimated_accurancy = 1 / (float)_param_pcf8583_magnet.get() / ((float)diffTime / 1000000) * 60.f;
 
 	// publish
